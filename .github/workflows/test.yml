@@ -25,14 +25,16 @@ jobs:
           composer --version
       - name: instalar MySQL
         run: |
-          choco install mysql --version=8.0.31 
+          choco install mysql -y
+          Start-Service mysql
+          mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';"
+          mysql -u root -proot -e "CREATE DATABASE authors_db;"
   test:
     runs-on: windows-latest
     needs: [build]
     steps:
       - name: texto
         run: echo "Test"
-
   deploy:
     runs-on: windows-latest
     needs: [test]
