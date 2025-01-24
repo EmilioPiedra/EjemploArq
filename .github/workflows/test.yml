@@ -21,7 +21,7 @@ jobs:
           choco install php --version=8.1
           choco insall composer
           php -v
-          composer --verison
+          composer -version
   test:
     runs-on: windows-latest
     needs: [build]
