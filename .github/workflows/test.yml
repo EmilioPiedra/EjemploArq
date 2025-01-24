@@ -8,3 +8,9 @@ jobs:
     steps:
       - name: mostrar texto
         run: echo "hola mundo 1"
+  build:
+    runs-on: windows-latest
+    needs: [inicio]
+    steps:
+      - name: texto
+        run: echo "Contruir"
