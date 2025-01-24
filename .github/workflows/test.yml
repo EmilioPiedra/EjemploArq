@@ -16,6 +16,12 @@ jobs:
     steps:
       - name: texto
         run: echo "Contruir"
+      - name: instalar php y composer Win
+        run: |
+          choco install php --version=8.1
+          choco insall composer
+          php -v
+          composer --verison
   test:
     runs-on: windows-latest
     needs: [build]
