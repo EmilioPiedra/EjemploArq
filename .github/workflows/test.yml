@@ -18,8 +18,8 @@ jobs:
         run: echo "Contruir"
       - name: instalar php y composer Win
         run: |
-          choco install php --version=8.1
-          choco insall composer
+          choco install php --version=8.1 
+          choco install composer 
           php -v
           composer -version
   test:
