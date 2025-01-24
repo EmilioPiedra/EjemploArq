@@ -19,11 +19,13 @@ jobs:
         run: echo "Construir"
       - name: instalar php y composer Win
         run: |
-          choco install php --version=8.1 -y
-          choco install composer -y
+          choco install php --version=8.1 
+          choco install composer 
           php -v
           composer --version
-
+      - name: instalar MySQL
+        run: |
+          choco install mysql --version=8.0 
   test:
     runs-on: windows-latest
     needs: [build]
