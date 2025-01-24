@@ -7,27 +7,30 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: mostrar texto
-        run: echo "Paso para clonar repositorio a github actions"
+        run: echo "Paso para clonar repositorio a GitHub Actions"
       - name: Clonar Repositorio
         uses: actions/checkout@v4.2.2
+
   build:
     runs-on: windows-latest
     needs: [inicio]
     steps:
       - name: texto
-        run: echo "Contruir"
+        run: echo "Construir"
       - name: instalar php y composer Win
         run: |
           choco install php --version=8.1 -y
           choco install composer -y
           php -v
-          composer -version
+          composer --version
+
   test:
     runs-on: windows-latest
     needs: [build]
     steps:
       - name: texto
-        run: echo "test"
+        run: echo "Test"
+
   deploy:
     runs-on: windows-latest
     needs: [test]
