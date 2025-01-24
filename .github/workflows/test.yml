@@ -7,7 +7,9 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: mostrar texto
-        run: echo "hola mundo 1"
+        run: echo "Paso para clonar repositorio a github actions"
+      - name: Clonar Repositorio
+        uses: actions/checkout@v4.2.2
   build:
     runs-on: windows-latest
     needs: [inicio]
